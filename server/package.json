@@ -1,0 +1,34 @@
+{
+  "name": "plotr-server",
+  "version": "1.0.0",
+  "description": "Back end for Plotr",
+  "author": "Jason Loomis <jason@jrloomis.com>",
+  "main": "/src/index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon src/index.js",
+    "start": "NODE_ENV=production nodemon src/index.js"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^2.3.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express-rate-limit": "^5.1.3",
+    "graphql-yoga": "^1.18.3",
+    "helmet": "^3.23.3",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.3.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "^2.3.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  }
+}
