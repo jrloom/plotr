@@ -1,3 +1,83 @@
 type Query {
   sanity: String!
+  sort_projects(
+    filter: String
+    skip: Int
+    take: Int
+    orderBy: ProjectOrderByInput
+  ): SortProjects!
+}
+
+type Mutation {
+  verify(tier: String!, email: String!, password: String!): AuthPayload
+  project(title: String!, description: String!): Project!
+  card(
+    projectId: ID!
+    title: String!
+    description: String!
+    card_type: CardType!
+  ): Card!
+}
+
+type Subscription {
+  newProject: Project
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type Card {
+  id: ID!
+  user: User!
+  project: Project!
+  title: String!
+  description: String!
+  card_type: CardType!
+}
+
+type User {
+  id: ID!
+  first_name: String
+  last_name: String
+  city: String
+  state: String
+  country: String
+  tier: String!
+  email: String!
+  projects: [Project!]!
+}
+
+type Project {
+  id: ID!
+  title: String!
+  description: String!
+  createdBy: User
+  cards: [Card!]!
+}
+
+type SortProjects {
+  projects: [Project!]!
+  count: Int!
+}
+
+input ProjectOrderByInput {
+  description: Sort
+  url: Sort
+  createdAt: Sort
+}
+
+enum CardType {
+  animal
+  location
+  misc
+  object
+  person
+  plot
+}
+
+enum Sort {
+  asc
+  desc
 }
