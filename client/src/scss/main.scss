@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
+@import '~rfs/scss';
+
 @import './config//variables';
 @import './config/reset';
 
@@ -7,3 +9,4 @@
 @import './components/sidebar';
 @import './components/nav';
 @import './components/pages';
+@import './components/button';
