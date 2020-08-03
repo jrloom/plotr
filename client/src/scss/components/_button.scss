@@ -1,0 +1,24 @@
+.nav-link {
+  position: relative;
+  color: lighten($color-secondary, 10);
+  text-transform: uppercase;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    background-color: $mid-grey;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 150ms ease-in-out 0s;
+  }
+  &:hover {
+    color: lighten($color-secondary, 10);
+    &::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+}
